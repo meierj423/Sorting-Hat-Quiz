@@ -1,4 +1,5 @@
-$("#beginBtn").on("click", function () {
+$("#font-style").css("font-family", "Courgette, cursive");
+$(".button").on("click", function () {
   var queryURL = "https://www.potterapi.com/v1/sortinghat";
   $.ajax({
     url: queryURL,
@@ -13,24 +14,20 @@ $("#beginBtn").on("click", function () {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      var housemate = $("#results-house").text();
+      var housemate = $("#ending").text();
       console.log(housemate);
       for (var i = 0; i < response.length; i++) {
         if (housemate === "Ravenclaw" && response[i].house === "Ravenclaw") {
           console.log(response[i].name);
-          $("#results-name").append(response[i].name);
         }
         if (housemate === "Gryffindor" && response[i].house === "Gryffindor") {
           console.log(response[i].name);
-          $("#results-name").append(response[i].name);
         }
         if (housemate === "Hufflepuff" && response[i].house === "Hufflepuff") {
           console.log(response[i].name);
-          $("#results-name").append(response[i].name);
         }
         if (housemate === "Slytherin" && response[i].house === "Slytherin") {
           console.log(response[i].name);
-          $("#results-name").append(response[i].name);
         }
       }
     });
@@ -91,7 +88,7 @@ $(".success").on("click", nextQuestion);
 
 function nextQuestion() {
   currentQuestionIndex = currentQuestionIndex + 1;
-  //console.log(currentQuestionIndex);
+  console.log(currentQuestionIndex);
   //renderQuestion();
   displayResults();
 }
@@ -112,6 +109,6 @@ function displayResults() {
     renderQuestion();
   } else {
     quiz.css("display", "none");
-    $("#resultscontainer").css("display", "block");
+    $("#results-page").css("display", "block");
   }
 }

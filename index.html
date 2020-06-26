@@ -13,21 +13,20 @@
     />
   </head>
 
-  <body>
-    <div class="container">
-      <h1>Welcome to Hogwarts!</h1>
-
-      <div id="test" class="card" style="width: 300px;">
-        <div class="card-divider">
-          Quiz Instructions
+  <body id="font-style">
+    <div class="container grid-x">
+      <div id="test" class="card cell" style="width: 300px;">
+        <div class="card-divider float-center">
+          <h3>Welcome to Hogwarts!</h3>
         </div>
-        <img
-          src="https://www.hypable.com/wp-content/uploads/2018/07/sorting-hat-quiz.jpg"
-          alt="sorting hat"
-        />
+        <div class="image">
+          <img
+            src="https://www.hypable.com/wp-content/uploads/2018/07/sorting-hat-quiz.jpg/150"
+            alt="sorting hat"
+          />
+        </div>
         <div class="card-section">
-          <h4></h4>
-          <p>
+          <p class="text-center">
             Now that you've been accepted into Hogwarts, it's time to find out
             which house will become your home, and get to know some of your
             fellow housemates. Click the button below and answer the following
@@ -36,7 +35,7 @@
           <button
             id="beginBtn"
             type="button"
-            class="alert button row align-center"
+            class="alert button large expanded row float-center text-10rem"
           >
             Begin!
           </button>
