@@ -83,7 +83,7 @@ function nextQuestion() {
 //renders the question to the page
 function renderQuestion() {
   var q = multipleChoice[currentQuestionIndex];
-  
+
   question.html("<p>" + q.question + "<p>");
   answerA.html(q.answerA);
   answerB.html(q.answerB);
