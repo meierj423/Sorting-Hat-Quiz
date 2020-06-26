@@ -7,27 +7,24 @@ $(".button").on("click", function () {
   }).then(function (response1) {
     var house = response1;
     $("#results-house").text(response1);
-    console.log(response1);
+
     var queryURL =
       "https://www.potterapi.com/v1/characters?key=$2a$10$p7J2vsj4U1hCIxFwrtomvurZc/RYAid/iAw0Zs.dRHT/Zh5dsJeoa";
     $.ajax({
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      var housemate = $("#ending").text();
-      console.log(housemate);
+      var housemate = $("#results-house").text();
+
+      function displayName() {
+        var newDiv = $("<div>");
+        newDiv.append(response[i].name);
+        $("#resultscontainer").append(newDiv);
+      }
+
       for (var i = 0; i < response.length; i++) {
-        if (housemate === "Ravenclaw" && response[i].house === "Ravenclaw") {
-          console.log(response[i].name);
-        }
-        if (housemate === "Gryffindor" && response[i].house === "Gryffindor") {
-          console.log(response[i].name);
-        }
-        if (housemate === "Hufflepuff" && response[i].house === "Hufflepuff") {
-          console.log(response[i].name);
-        }
-        if (housemate === "Slytherin" && response[i].house === "Slytherin") {
-          console.log(response[i].name);
+        if (housemate === response[i].house) {
+          displayName();
         }
       }
     });
