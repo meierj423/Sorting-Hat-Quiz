@@ -11,6 +11,10 @@
       integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -19,7 +23,6 @@
       <div id="test" class="card cell" style="width: 300px;">
         <div class="card-divider float-center">
           <header>Welcome to Hogwarts!</header>
-          
         </div>
         <div class="image">
           <img
@@ -46,26 +49,35 @@
     </div>
 
     <div id="quiz" style="display: none;">
-      <h1>
-        <div id="question"></div>
-      </h1>
+      <div>
+        <p id="question"></p>
+      </div>
 
       <ul>
         <div id="choices">
           <li>
-            <button type="button" class="success button alert button large row float-center text-10rem">
-              <div class="choice " id="A"></div>
+            <button
+              type="button"
+              class="success button alert button large row float-center text-10rem"
+            >
+              <div class="choice" id="A"></div>
             </button>
           </li>
 
           <li>
-            <button type="button" class="success button alert button large row float-center text-10rem">
+            <button
+              type="button"
+              class="success button alert button large row float-center text-10rem"
+            >
               <div class="choice" id="B"></div>
             </button>
           </li>
 
           <li>
-            <button type="button" class="success button alert button large row float-center text-10rem">
+            <button
+              type="button"
+              class="success button alert button large row float-center text-10rem"
+            >
               <div class="choice" id="C"></div>
             </button>
           </li>
@@ -74,6 +86,7 @@
     </div>
     <div id="resultscontainer" style="display: none;">
       <div id="results-house">House name</div>
+      <p class="text-center">These are your housemates:</p>
       <div id="results-name"></div>
     </div>
 
