@@ -91,10 +91,10 @@ function renderQuestion() {
   answerC.html(q.answerC);
 }
 
-  //checks to see if there is a next question
-  if (currentQuestionIndex < lastQuestionIndex) {
-    currentQuestionIndex++;
-    renderQuestion();
-  } else {
-    renderScore();
-  }
+//checks to see if there is a next question
+if (currentQuestionIndex < lastQuestionIndex) {
+  currentQuestionIndex++;
+  renderQuestion();
+} else {
+  renderScore();
+}
