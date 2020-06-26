@@ -77,7 +77,8 @@ $(".success").on("click", nextQuestion);
 function nextQuestion() {
   currentQuestionIndex = currentQuestionIndex + 1;
   console.log(currentQuestionIndex);
-  renderQuestion();
+  //renderQuestion();
+  displayResults ();
 }
 
 //renders the question to the page
@@ -90,10 +91,14 @@ function renderQuestion() {
   answerC.html(q.answerC);
 }
 
-//checks to see if there is a next question
-// if (currentQuestionIndex < lastQuestionIndex) {
-//   currentQuestionIndex++;
-//   renderQuestion();
-// } else {
-//   alert("Finished!");
-// }
+
+
+//checks to see if the last question has been answered, if so display quiz results
+function displayResults () {
+  if (currentQuestionIndex < lastQuestionIndex + 1) {
+  renderQuestion();
+} else {
+  quiz.css("display", "none");
+  $("#results-page").css("display", "block");
+}};
+
