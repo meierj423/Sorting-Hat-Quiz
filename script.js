@@ -12,7 +12,6 @@ $(".button").on("click", function () {
     //shows other characters in the same house
     for (var i = 0; i < response.length; i++) {
       if (response[i].house === "Ravenclaw") {
-        console.log(response[i].name);
       }
     }
   });
@@ -31,39 +30,33 @@ var messageDiv = $("#message");
 //all questions are stored in this array as objects
 var multipleChoice = [
   {
-    question: "Which of these is a Boolean?",
-    answerA: "False",
-    answerB: "56",
-    answerC: "Undefined",
-    correct: "A",
+    question: "From the following, what is your favorite animal?",
+    answerA: "Toad",
+    answerB: "Owl",
+    answerC: "Rat",
+    // correct: "C",
   },
   {
-    question: "Which of these is an array?",
-    answerA: "var number = 123;",
-    answerB: "var number = [1, 2, 3];",
-    answerC: "function();",
-    correct: "B",
+    question: "From of the following, what is your favorite type of wand?",
+    answerA: "Holly",
+    answerB: "Ash",
+    answerC: "Willow",
+    // correct: "B",
   },
   {
-    question: "How long is the string 'Hello'?",
-    answerA: "7",
-    answerB: "6",
-    answerC: "5",
-    correct: "C",
+    question: "From the following, what is your favorite candy?",
+    answerA: "Chocolate frogs",
+    answerB: "Cockroach Clusters",
+    answerC: "Bertie Bott's Every Flavour Beans",
+    // correct: "A",
   },
+
   {
-    question: "How do you declare a variable?",
-    answerA: "event",
-    answerB: "var",
-    answerC: "for",
-    correct: "B",
-  },
-  {
-    question: "How do you increment?",
-    answerA: "i++",
-    answerB: "i==",
-    answerC: "i--",
-    correct: "A",
+    question: "Which of the following best describes you?",
+    answerA: "Brave",
+    answerB: "Loyal",
+    answerC: "Hard-working",
+    // correct: "B",
   },
 ];
 
@@ -72,12 +65,18 @@ var lastQuestionIndex = multipleChoice.length - 1;
 var currentQuestionIndex = 0;
 
 //starts the game
-$(".button").on("click", startQuiz);
+$("#beginBtn").on("click", startQuiz);
 
 function startQuiz() {
-  start.css("display", "none");
   quiz.css("display", "block");
-  $("#test").css("display", "none");
+  $(".container").css("display", "none");
+  renderQuestion();
+}
+$(".success").on("click", nextQuestion);
+
+function nextQuestion() {
+  currentQuestionIndex = currentQuestionIndex + 1;
+  console.log(currentQuestionIndex);
   renderQuestion();
 }
 
@@ -92,9 +91,9 @@ function renderQuestion() {
 }
 
 //checks to see if there is a next question
-if (currentQuestionIndex < lastQuestionIndex) {
-  currentQuestionIndex++;
-  renderQuestion();
-} else {
-  renderScore();
-}
+// if (currentQuestionIndex < lastQuestionIndex) {
+//   currentQuestionIndex++;
+//   renderQuestion();
+// } else {
+//   alert("Finished!");
+// }
