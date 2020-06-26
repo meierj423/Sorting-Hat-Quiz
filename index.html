@@ -13,27 +13,29 @@
     />
   </head>
   <body>
-    <h1>Welcome to Hogwarts!</h1>
+    <div class="container">
+      <h1>Welcome to Hogwarts!</h1>
 
-    <div id="test" class="card" style="width: 300px;">
-      <div class="card-divider">
-        Quiz Instructions
-      </div>
-      <img
-        src="https://www.hypable.com/wp-content/uploads/2018/07/sorting-hat-quiz.jpg"
-        alt="sorting hat"
-      />
-      <div class="card-section">
-        <h4></h4>
-        <p>
-          Now that you've been accepted into Hogwarts, it's time to find out
-          which house will become your home, and get to know some of your fellow
-          housemates. Click the button below and answer the following questions
-          to see where the Sorting Hat places you!
-        </p>
-        <button type="button" class="alert button row align-center">
-          Begin!
-        </button>
+      <div id="test" class="card" style="width: 300px;">
+        <div class="card-divider">
+          Quiz Instructions
+        </div>
+        <img
+          src="https://www.hypable.com/wp-content/uploads/2018/07/sorting-hat-quiz.jpg"
+          alt="sorting hat"
+        />
+        <div class="card-section">
+          <h4></h4>
+          <p>
+            Now that you've been accepted into Hogwarts, it's time to find out
+            which house will become your home, and get to know some of your
+            fellow housemates. Click the button below and answer the following
+            questions to see where the Sorting Hat places you!
+          </p>
+          <button id="beginBtn" type="button" class="alert button row align-center">
+            Begin!
+          </button>
+        </div>
       </div>
     </div>
 
@@ -43,27 +45,25 @@
       <ul>
         <div id="choices">
           <li>
-            <button type="button" class="alert button">
-              <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+            <button type="button" class="success button">
+              <div class="choice" id="A"></div>
             </button>
           </li>
 
           <li>
-            <button type="button" class="alert button">
-              <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+            <button type="button" class="success button">
+              <div class="choice" id="B"></div>
             </button>
           </li>
 
           <li>
-            <button type="button" class="alert button">
-              <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+            <button type="button" class="success button">
+              <div class="choice" id="C"></div>
             </button>
           </li>
         </div>
       </ul>
-
     </div>
-
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
