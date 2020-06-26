@@ -1,4 +1,5 @@
-$("#beginBtn").on("click", function () {
+$("#font-style").css("font-family", "Courgette, cursive");
+$(".button").on("click", function () {
   var queryURL = "https://www.potterapi.com/v1/sortinghat";
   $.ajax({
     url: queryURL,
@@ -84,7 +85,7 @@ $(".success").on("click", nextQuestion);
 
 function nextQuestion() {
   currentQuestionIndex = currentQuestionIndex + 1;
-  //console.log(currentQuestionIndex);
+  console.log(currentQuestionIndex);
   //renderQuestion();
   displayResults();
 }
@@ -105,6 +106,6 @@ function displayResults() {
     renderQuestion();
   } else {
     quiz.css("display", "none");
-    $("#resultscontainer").css("display", "block");
+    $("#results-page").css("display", "block");
   }
 }
