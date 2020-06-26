@@ -1,22 +1,36 @@
-var queryURL =
-  "https://www.potterapi.com/v1/characters?key=$2a$10$l2P4zXvq0jsIUhsi015XBugLZCxoQ3TXFFlJQ4rdjS/JPxUeDM0XC";
-
-$(".button").on("click", function () {
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-  }).then(function (response) {
-    // console.log(response);
-    //console.log(response[0].name);
-
-    //shows other characters in the same house
-    for (var i = 0; i < response.length; i++) {
-      if (response[i].house === "Ravenclaw") {
-      }
-    }
-  });
-}); // closes click event
-//hello
+$(".button").on("click", function() {
+    var queryURL = "https://www.potterapi.com/v1/sortinghat";
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+    }).then(function(response1) {
+        var house = response1;
+        $("#ending").text(response1);
+        var queryURL =
+            "https://www.potterapi.com/v1/characters?key=$2a$10$l2P4zXvq0jsIUhsi015XBugLZCxoQ3TXFFlJQ4rdjS/JPxUeDM0XC";
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+        }).then(function(response) {
+            var housemate = $("#ending").text();
+            console.log(housemate);
+            for (var i = 0; i < response.length; i++) {
+                if (housemate === "Ravenclaw" && response[i].house === "Ravenclaw") {
+                    console.log(response[i].name);
+                }
+                if (housemate === "Gryffindor" && response[i].house === "Gryffindor") {
+                    console.log(response[i].name);
+                }
+                if (housemate === "Hufflepuff" && response[i].house === "Hufflepuff") {
+                    console.log(response[i].name);
+                }
+                if (housemate === "Slytherin" && response[i].house === "Slytherin") {
+                    console.log(response[i].name);
+                }
+            }
+        });
+    });
+});
 
 var start = $("#start");
 var startBtn = $("#start-btn");
@@ -28,36 +42,35 @@ var answerC = $("#C");
 var messageDiv = $("#message");
 
 //all questions are stored in this array as objects
-var multipleChoice = [
-  {
-    question: "From the following, what is your favorite animal?",
-    answerA: "Toad",
-    answerB: "Owl",
-    answerC: "Rat",
-    // correct: "C",
-  },
-  {
-    question: "From of the following, what is your favorite type of wand?",
-    answerA: "Holly",
-    answerB: "Ash",
-    answerC: "Willow",
-    // correct: "B",
-  },
-  {
-    question: "From the following, what is your favorite candy?",
-    answerA: "Chocolate frogs",
-    answerB: "Cockroach Clusters",
-    answerC: "Bertie Bott's Every Flavour Beans",
-    // correct: "A",
-  },
+var multipleChoice = [{
+        question: "From the following, what is your favorite animal?",
+        answerA: "Toad",
+        answerB: "Owl",
+        answerC: "Rat",
 
-  {
-    question: "Which of the following best describes you?",
-    answerA: "Brave",
-    answerB: "Loyal",
-    answerC: "Hard-working",
-    // correct: "B",
-  },
+    },
+    {
+        question: "From of the following, what is your favorite type of wand?",
+        answerA: "Holly",
+        answerB: "Ash",
+        answerC: "Willow",
+
+    },
+    {
+        question: "From the following, what is your favorite candy?",
+        answerA: "Chocolate frogs",
+        answerB: "Cockroach Clusters",
+        answerC: "Bertie Bott's Every Flavour Beans",
+
+    },
+
+    {
+        question: "Which of the following best describes you?",
+        answerA: "Brave",
+        answerB: "Loyal",
+        answerC: "Hard-working",
+
+    },
 ];
 
 //these will keep track of the index of array
@@ -68,27 +81,28 @@ var currentQuestionIndex = 0;
 $("#beginBtn").on("click", startQuiz);
 
 function startQuiz() {
-  quiz.css("display", "block");
-  $(".container").css("display", "none");
-  renderQuestion();
+    quiz.css("display", "block");
+    $(".container").css("display", "none");
+    renderQuestion();
 }
 $(".success").on("click", nextQuestion);
 
 function nextQuestion() {
-  currentQuestionIndex = currentQuestionIndex + 1;
-  console.log(currentQuestionIndex);
-  renderQuestion();
+    currentQuestionIndex = currentQuestionIndex + 1;
+    console.log(currentQuestionIndex);
+    renderQuestion();
 }
 
 //renders the question to the page
 function renderQuestion() {
-  var q = multipleChoice[currentQuestionIndex];
+    var q = multipleChoice[currentQuestionIndex];
 
-  question.html("<p>" + q.question + "<p>");
-  answerA.html(q.answerA);
-  answerB.html(q.answerB);
-  answerC.html(q.answerC);
+    question.html("<p>" + q.question + "<p>");
+    answerA.html(q.answerA);
+    answerB.html(q.answerB);
+    answerC.html(q.answerC);
 }
+
 
 //checks to see if there is a next question
 // if (currentQuestionIndex < lastQuestionIndex) {
