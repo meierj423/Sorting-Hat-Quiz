@@ -6,8 +6,9 @@ $("#beginBtn").on("click", function () {
   }).then(function (response1) {
     var house = response1;
     $("#results-house").text(response1);
+    console.log(response1);
     var queryURL =
-      "https://www.potterapi.com/v1/characters?key=$2a$10$l2P4zXvq0jsIUhsi015XBugLZCxoQ3TXFFlJQ4rdjS/JPxUeDM0XC";
+      "https://www.potterapi.com/v1/characters?key=$2a$10$p7J2vsj4U1hCIxFwrtomvurZc/RYAid/iAw0Zs.dRHT/Zh5dsJeoa";
     $.ajax({
       url: queryURL,
       method: "GET",
