@@ -106,6 +106,6 @@ function displayResults() {
     renderQuestion();
   } else {
     quiz.css("display", "none");
-    $("#results-page").css("display", "block");
+    $("#resultscontainer").css("display", "block");
   }
 }

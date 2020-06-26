@@ -1,10 +1,45 @@
 #beginBtn {
-    margin-left: 30%;
-    margin-right: 30%;
     font-size: 50px;
 }
 
 .image {
     max-width: 600px;
     margin: 0 auto;
+}
+
+.text-center {
+    font-size: 1.5em;
+}
+
+.card-divider {
+    font-size: 2em;
+    font-weight: bold;
+    background-color: #a53b2a;
+    margin-bottom: .5em;
+}
+
+li {
+    list-style-type: none;
+}
+
+.choice {
+    width: 10em;
+}
+
+#quiz {
+    max-width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#results-house {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color:  grey;
+    margin-bottom: .5em;
+}
+
+#results-name {
+    text-align: center;
 }
