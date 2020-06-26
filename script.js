@@ -5,11 +5,11 @@ $(".button").on("click", function () {
     url: queryURL,
     method: "GET",
   }).then(function (response1) {
-    var house = response1;
+    //var house = response1;
     $("#results-house").text(response1);
 
     var queryURL =
-      "https://www.potterapi.com/v1/characters?key=$2a$10$p7J2vsj4U1hCIxFwrtomvurZc/RYAid/iAw0Zs.dRHT/Zh5dsJeoa";
+      "https://www.potterapi.com/v1/characters?key=$2a$10$iacULY4a7QR33q5CZCeo6uNiFeU5wWPph51g/LllCxkW8f6kUqYdm";
     $.ajax({
       url: queryURL,
       method: "GET",
