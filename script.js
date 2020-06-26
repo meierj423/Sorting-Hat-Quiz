@@ -1,11 +1,9 @@
-$("#font-style").css("font-family", "Courgette, cursive");
-$(".button").on("click", function () {
+$("#beginBtn").on("click", function () {
   var queryURL = "https://www.potterapi.com/v1/sortinghat";
   $.ajax({
     url: queryURL,
     method: "GET",
   }).then(function (response1) {
-    //var house = response1;
     $("#results-house").text(response1);
 
     var queryURL =
@@ -18,7 +16,7 @@ $(".button").on("click", function () {
 
       function displayName() {
         var newDiv = $("<div>");
-        newDiv.append(response[i].name);
+        newDiv.text(response[i].name);
         $("#resultscontainer").append(newDiv);
       }
 
@@ -85,8 +83,6 @@ $(".success").on("click", nextQuestion);
 
 function nextQuestion() {
   currentQuestionIndex = currentQuestionIndex + 1;
-  console.log(currentQuestionIndex);
-  //renderQuestion();
   displayResults();
 }
 
@@ -100,6 +96,20 @@ function renderQuestion() {
   answerC.html(q.answerC);
 }
 
+//sets background color according to house
+function houseColor() {
+  var result = $("#results-house");
+  if (result.text() === "Gryffindor") {
+    result.css({ "background-color": "#740001", color: "white" });
+  } else if (result.text() === "Ravenclaw") {
+    result.css({ "background-color": "#222F5B", color: "white" });
+  } else if (result.text() === "Hufflepuff") {
+    result.css("background-color", "#ECB939");
+  } else {
+    result.css({ "background-color": "#2A623D", color: "white" });
+  }
+}
+
 //checks to see if the last question has been answered, if so display quiz results
 function displayResults() {
   if (currentQuestionIndex < lastQuestionIndex + 1) {
@@ -107,5 +117,6 @@ function displayResults() {
   } else {
     quiz.css("display", "none");
     $("#resultscontainer").css("display", "block");
+    houseColor();
   }
 }
