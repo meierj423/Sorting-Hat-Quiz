@@ -47,7 +47,8 @@ var multipleChoice = [
     answerC: "Rat",
   },
   {
-    question: "From of the following, what is your favorite type of wand?",
+    question:
+      "From which of the following, what is your favorite type of wand?",
     answerA: "Holly",
     answerB: "Ash",
     answerC: "Willow",
