@@ -6,7 +6,7 @@ The user will be prompted to answers a series of quiz questions to find out whic
 
 # Sorting Hat Quiz
 
-https://tlam1288.github.io/Project-1/
+https://tlam1288.github.io/Sorting-Hat-Quiz/
 
 ![](assets/hp1.png)
 ![](assets/hp2.png)
